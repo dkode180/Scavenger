@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfom7sne0mhda"]
+
+[ext_resource type="PackedScene" uid="uid://b2ucl3ovnh84k" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://b02lkrw55icmr" path="res://assets/sprites/Sprites/boundary_circle.png" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://xardvwrucsnx" path="res://assets/sprites/Sprites/offscreen.png" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://djvgcj0muxj0i" path="res://addons/donut_collision_polygon2D/donut_collision_polygon2D.gd" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://bxx5l3b0n2vn5" path="res://assets/sprites/Sprites/whiteBG.png" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://b3fee5vpk1ynr" path="res://assets/sprites/Sprites/boundary_circle_s.png" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://noh3q8b30h62" path="res://assets/fonts/Fonts/gomarice_heysei_synthesizer.ttf" id="7_u5sy4"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_uwrxv")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Offscreen" type="Sprite2D" parent="."]
+modulate = Color(0.329412, 0, 0.329412, 1)
+z_index = 2
+position = Vector2(0, 2)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_lnu2h")
+
+[node name="BoundaryCircle" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(7.62939e-06, 0.999996)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_lbhrr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="DonutCollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(27.5, 27.5)
+polygon = PackedVector2Array(6.73533e-16, -11, 2.14599, -10.7886, 4.20952, -10.1627, 6.11127, -9.14617, 7.77817, -7.77817, 9.14617, -6.11127, 10.1627, -4.20952, 10.7886, -2.14599, 11, 0, 10.7886, 2.14599, 10.1627, 4.20952, 9.14617, 6.11127, 7.77817, 7.77817, 6.11127, 9.14617, 4.20952, 10.1627, 2.14599, 10.7886, 6.73533e-16, 11, -2.14599, 10.7886, -4.20952, 10.1627, -6.11127, 9.14617, -7.77817, 7.77817, -9.14617, 6.11127, -10.1627, 4.20952, -10.7886, 2.14599, -11, 1.34707e-15, -10.7886, -2.14599, -10.1627, -4.20952, -9.14617, -6.11127, -7.77817, -7.77817, -6.11127, -9.14617, -4.20952, -10.1627, -2.14599, -10.7886, -2.0206e-15, -11, -1.65322e-15, -9, -1.75581, -8.82707, -3.44415, -8.31492, -5.00013, -7.48323, -6.36396, -6.36396, -7.48323, -5.00013, -8.31492, -3.44415, -8.82707, -1.75581, -9, 1.10215e-15, -8.82707, 1.75581, -8.31492, 3.44415, -7.48323, 5.00013, -6.36396, 6.36396, -5.00013, 7.48323, -3.44415, 8.31492, -1.75581, 8.82707, 5.51073e-16, 9, 1.75581, 8.82707, 3.44415, 8.31492, 5.00013, 7.48323, 6.36396, 6.36396, 7.48323, 5.00013, 8.31492, 3.44415, 8.82707, 1.75581, 9, 0, 8.82707, -1.75581, 8.31492, -3.44415, 7.48323, -5.00013, 6.36396, -6.36396, 5.00013, -7.48323, 3.44415, -8.31492, 1.75581, -8.82707, 5.51073e-16, -9, 0.0001, -10.9999)
+script = ExtResource("4_lbhrr")
+metadata/_custom_type_script = "uid://djvgcj0muxj0i"
+
+[node name="WhiteBg" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-0.499969, 4)
+scale = Vector2(0.996537, 1)
+texture = ExtResource("5_iywne")
+
+[node name="BoundaryCircleS" type="Sprite2D" parent="."]
+modulate = Color(0.32767, 7.26052e-05, 0.327668, 1)
+z_index = 2
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("6_p57ef")
+
+[node name="BoundaryCircleS2" type="Sprite2D" parent="."]
+modulate = Color(0.329412, 0, 0.329412, 1)
+z_index = 3
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_p57ef")
+
+[node name="LabelPorcentaje" type="Label" parent="."]
+modulate = Color(0.329412, 0, 0.329412, 0.454902)
+z_index = 2
+offset_left = -66.0
+offset_top = -25.0
+offset_right = 66.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 54
+text = "100"
+horizontal_alignment = 1
