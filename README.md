@@ -52,6 +52,6 @@ Hasta ahora, he completado las siguientes tareas:
 - Programación del **movimiento de la nave**.
 - Implementación del **contador de porcentaje de disparo** del juego.
 
-- ###Primera semana de mayo
+### Primera semana de mayo
 - Creación de la clase Enemy, que controla el comportamiento de las naves enemigas
 - Creacion del nodo Timer que gestiona donde y cuándo spawnean los enemigos (en proceso)  
