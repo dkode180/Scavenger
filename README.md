@@ -1,7 +1,7 @@
 # Desarrollo SCAVENGER
 
 ## Problemas de desarrollo con el motor de Unity
-###Segunda semana de abril
+### Segunda semana de abril
 
 Al intentar descargar el motor Unity para desarrollar el juego, el sistema mostraba **pantallazos azules (BSOD)** con el error:
 
