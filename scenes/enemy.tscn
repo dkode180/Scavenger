@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2ows365mo48y"]
+
+[ext_resource type="Script" uid="uid://k7ihrshuph5l" path="res://scenes/Enemy.cs" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://cl2vk2ofvdwd0" path="res://assets/sprites/Sprites/ship_big.png" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://b86ju28lr34jx" path="res://assets/sprites/Sprites/ship1_s.png" id="2_4ra3w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_4ra3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5uy6h")
+
+[node name="SpriteDelantero" type="Sprite2D" parent="."]
+z_index = 3
+rotation = 1.56551
+texture = ExtResource("1_md0e3")
+
+[node name="SpriteTrasero" type="Sprite2D" parent="."]
+self_modulate = Color(0.329412, 0, 0.329412, 1)
+z_index = 2
+position = Vector2(8, 10)
+rotation = 1.56551
+scale = Vector2(2, 2)
+texture = ExtResource("2_4ra3w")

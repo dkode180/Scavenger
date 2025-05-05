@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxm7c0lgdn2u"]
+
+[ext_resource type="Script" uid="uid://cuagkw4rfp7db" path="res://scenes/SpawnComponent.cs" id="1_dahl1"]
+
+[node name="spawnComponent" type="Node2D"]
+script = ExtResource("1_dahl1")
+
+[node name="TimerSpawn" type="Timer" parent="."]

@@ -5,8 +5,9 @@ using System.Diagnostics;
 public partial class Player : CharacterBody2D
 {
 	public const float Speed = 200.0f;
-	public const float JumpVelocity = -300.0f;
 	public const float Deceleration = 80.0f;
+	public const float MaxSpeed = 200.0f;
+	public const float Acceleration = 400.0f;
 
 	private Sprite2D spriteDelantero;
 	private Sprite2D spriteTrasero;
@@ -19,6 +20,7 @@ public partial class Player : CharacterBody2D
 		spriteDelantero = GetNode<Sprite2D>("SpriteDelantero");
 		spriteTrasero = GetNode<Sprite2D>("SpriteTrasero");
 		labelPorcentaje=GetNode<Label>("/root/Game/LabelPorcentaje");
+		labelPorcentaje = GetNode<Label>("/root/Game/LabelPorcentaje");
 		int.TryParse(labelPorcentaje.Text, out porcentaje);
 
 
@@ -28,16 +30,23 @@ public partial class Player : CharacterBody2D
 		Rotation = direccion.Angle();
 
 		// spriteTrasero.Position = spriteDelantero.Position - direccion * 10;
-		
-	
+
+
 		// Handle Movement.
 		if (Input.IsActionPressed("move"))
 		{
-			velocity = direccion * Speed;
+			// Aceleramos en dirección al mouse
+			velocity += direccion * Acceleration * (float)delta;
+
+			// Limitamos la velocidad a la máxima permitida, velocity.Length pilla el modulo del vector y lo compara con MaxSpeed. Si es mayor, lo capa a MaxSpeed
+			if (velocity.Length() > MaxSpeed)
+			{
+				velocity = velocity.Normalized() * MaxSpeed;
+			}
 		}
 		else
 		{
-			// Desacelerar suavemente cuando no se mueve
+			// Desacelerar cuando no se mueve
 			velocity = velocity.MoveToward(Vector2.Zero, Deceleration * (float)delta);
 		}
 
@@ -46,20 +55,9 @@ public partial class Player : CharacterBody2D
 			Debug.WriteLine("Pew!");
 			porcentaje--;
 			labelPorcentaje.Text=porcentaje.ToString();
+			labelPorcentaje.Text = porcentaje.ToString();
 		}
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		// Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		// if (direction != Vector2.Zero)
-		// {
-		// 	velocity.X = direction.X * Speed;
-		// }
-		// else
-		// {
-		// 	velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		// }
-
+		
 		Velocity = velocity;
 		MoveAndSlide();
 	}
