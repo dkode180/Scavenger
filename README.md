@@ -1,6 +1,7 @@
 # Desarrollo SCAVENGER
 
 ## Problemas de desarrollo con el motor de Unity
+###Segunda semana de abril
 
 Al intentar descargar el motor Unity para desarrollar el juego, el sistema mostraba **pantallazos azules (BSOD)** con el error:
 
@@ -26,6 +27,7 @@ Al intentar descargar el motor Unity para desarrollar el juego, el sistema mostr
 ---
 
 ## Proyectos Pre-desarrollo y Pre-documentación
+### Segunda y Tercera semana de abril
 
 Para familiarizarme con el motor Godot, investigué documentación y seguí algunos tutoriales clave:
 
@@ -44,8 +46,12 @@ Para familiarizarme con el motor Godot, investigué documentación y seguí algu
 ## Desarrollo del Proyecto
 
 Hasta ahora, he completado las siguientes tareas:
-
+### Cuarta semana de abril
 - Recopilación de **efectos de sonido**, **sprites** y otros elementos visuales del juego.
 - Creación de la **arena** donde se desarrollará la partida.
 - Programación del **movimiento de la nave**.
 - Implementación del **contador de porcentaje de disparo** del juego.
+
+###Primera semana de mayo
+- Creación de la clase Enemy, que controla el comportamiento de las naves enemigas
+- Creacion del nodo Timer que gestiona donde y cuándo spawnean los enemigos (en proceso)  
