@@ -54,4 +54,9 @@ Hasta ahora, he completado las siguientes tareas:
 
 ### Primera semana de mayo
 - Creación de la clase Enemy, que controla el comportamiento de las naves enemigas
-- Creacion del nodo Timer que gestiona donde y cuándo spawnean los enemigos (en proceso)  
+- Creacion del nodo Timer que gestiona donde y cuándo spawnean los enemigos
+### Segunda semana de mayo
+- Creación de la clase Bullet e implementación de la misma en el juego (gestion de colliders, sprites, etc)
+- Gestión a la hora de eliminar tanto los enemigos cuando entran en contacto con una bala como la misma bala al impactar con cualquier collider
+- Creación de la lógica de disparo del juego (El tema del porcentaje de disparo certero)
+- Gestión del GAME OVER (en proceso) 
