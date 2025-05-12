@@ -12,12 +12,14 @@ public partial class SpawnComponent : Node2D
 	public PackedScene EnemyScene;
 
 	// Called when the node enters the scene tree for the first time.
-	
+
 	public override void _Ready()
 	{
+
 		time = (float)GetNode<Timer>("TimerSpawn").WaitTime;
-		// enemy = GetNode<Node2D>("Enemy");
-		
+
+		// Conectar la señal timeout al método spawn
+		GetNode<Timer>("TimerSpawn").Timeout += spawn;
 	}
 	public Vector2 getSpawnPoint()
 	{
@@ -31,12 +33,12 @@ public partial class SpawnComponent : Node2D
 				randomPosition.X = r.Next(0, (int)screen_size.X);
 				break;
 			case 1:
-				randomPosition.Y = r.Next(0, (int)screen_size.Y); 
-				randomPosition.X=screen_size.X;
+				randomPosition.Y = r.Next(0, (int)screen_size.Y);
+				randomPosition.X = screen_size.X;
 				break;
 			case 2:
 				randomPosition.X = r.Next(0, (int)screen_size.X);
-				randomPosition.Y=screen_size.Y;
+				randomPosition.Y = screen_size.Y;
 				break;
 			case 3:
 				randomPosition.Y = r.Next(0, (int)screen_size.Y);
@@ -46,9 +48,24 @@ public partial class SpawnComponent : Node2D
 
 	}
 
-	// public void spawn(){
-	// 	var newEnemy= new Enemy
-	// }
+	public void spawn()
+	{
+		if (EnemyScene != null)
+		{
+			// Instancia un nuevo enemigo desde la escena exportada
+			Node2D newEnemy = (Node2D)EnemyScene.Instantiate();
+
+			// Posición inicial aleatoria
+			newEnemy.Position = getSpawnPoint();
+
+			// Añade el enemigo al árbol de nodos (puedes ajustar el nodo padre si es necesario)
+			GetTree().Root.AddChild(newEnemy);
+		}
+		else
+		{
+			GD.PrintErr("EnemyScene no está asignado.");
+		}
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

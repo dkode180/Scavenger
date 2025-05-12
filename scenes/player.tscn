@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2ucl3ovnh84k"]
+[gd_scene load_steps=12 format=3 uid="uid://b2ucl3ovnh84k"]
 
 [ext_resource type="Texture2D" uid="uid://dund5srqm1h0v" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://brb6pp46tacfn" path="res://Player.cs" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://b7olmddfoxiho" path="res://scenes/Bullet.tscn" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://b0cx2s1ypxufo" path="res://assets/sprites/Sprites/ship2_s.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://c6nqbbemsmtr0" path="res://assets/sprites/Sprites/ship2.png" id="5_qlg0r"]
 
@@ -45,7 +46,10 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+collision_mask = 2
 script = ExtResource("1_g2els")
+BulletScene = ExtResource("2_qlg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fjrip")

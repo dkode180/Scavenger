@@ -4,7 +4,9 @@ using System.Diagnostics;
 //TODO Crear la sombra de los objetos
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 200.0f;
+	[Export]
+	public PackedScene BulletScene;
+	public const float Speed = 280.0f;
 	public const float Deceleration = 80.0f;
 	public const float MaxSpeed = 200.0f;
 	public const float Acceleration = 400.0f;
@@ -13,13 +15,15 @@ public partial class Player : CharacterBody2D
 	private Sprite2D spriteTrasero;
 	private Label labelPorcentaje;
 	private int porcentaje;
+	private Random r;
+
 
 
 	public override void _PhysicsProcess(double delta)
 	{
+		r = new Random();
 		spriteDelantero = GetNode<Sprite2D>("SpriteDelantero");
 		spriteTrasero = GetNode<Sprite2D>("SpriteTrasero");
-		labelPorcentaje=GetNode<Label>("/root/Game/LabelPorcentaje");
 		labelPorcentaje = GetNode<Label>("/root/Game/LabelPorcentaje");
 		int.TryParse(labelPorcentaje.Text, out porcentaje);
 
@@ -52,12 +56,32 @@ public partial class Player : CharacterBody2D
 
 		if (Input.IsActionJustPressed("shoot"))
 		{
-			Debug.WriteLine("Pew!");
-			porcentaje--;
-			labelPorcentaje.Text=porcentaje.ToString();
-			labelPorcentaje.Text = porcentaje.ToString();
+			int n;
+			Debug.WriteLine("Porcentaje: "+porcentaje);
+			// if (r.Next(1, 100) == porcentaje)
+			n=r.Next(1,100);
+			if(n>porcentaje)
+			{
+				GetTree().ReloadCurrentScene(); // Reinicia la partida
+			}
+			else
+			{
+				porcentaje--;
+				labelPorcentaje.Text = porcentaje.ToString();
+
+				// Crear la bala
+				Bullet bullet = BulletScene.Instantiate<Bullet>();
+				bullet.GlobalPosition = GlobalPosition;
+				bullet.SetDirection((GetGlobalMousePosition() - GlobalPosition).Normalized());
+
+				// Agregarla al árbol de nodos
+				GetTree().CurrentScene.AddChild(bullet);
+			}
+			Debug.WriteLine("Numero aleatorio: "+n);
+
+
 		}
-		
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}

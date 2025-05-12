@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dko\\Documents\\scavenger100\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E275F76-79D2-4C6F-81CC-9870D036360B}|Scavenger100.csproj|c:\\users\\dko\\documents\\scavenger100\\scenes\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E275F76-79D2-4C6F-81CC-9870D036360B}|Scavenger100.csproj|solutionrelative:scenes\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\dko\\Documents\\scavenger100\\scenes\\Bullet.cs",
+              "RelativeDocumentMoniker": "scenes\\Bullet.cs",
+              "ToolTip": "C:\\Users\\dko\\Documents\\scavenger100\\scenes\\Bullet.cs",
+              "RelativeToolTip": "scenes\\Bullet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T17:08:31.707Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

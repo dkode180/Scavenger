@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7olmddfoxiho"]
+
+[ext_resource type="Script" uid="uid://yja3bi126usp" path="res://scenes/Bullet.cs" id="1_4utqk"]
+[ext_resource type="Texture2D" uid="uid://lw3gcdyma1va" path="res://assets/sprites/Sprites/bullet.png" id="2_51h0o"]
+[ext_resource type="Texture2D" uid="uid://mhpy5hpq7pw7" path="res://assets/sprites/Sprites/bullet_s.png" id="3_4m4t0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
+radius = 10.0499
+
+[node name="Bullet" type="Area2D"]
+collision_mask = 6
+script = ExtResource("1_4utqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4vejd")
+
+[node name="SpriteDelantero" type="Sprite2D" parent="."]
+z_index = 3
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_51h0o")
+
+[node name="SpriteTrasero" type="Sprite2D" parent="."]
+self_modulate = Color(0.329412, 0, 0.329412, 1)
+z_index = 2
+position = Vector2(-1, 1)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4m4t0")
