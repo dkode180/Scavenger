@@ -57,12 +57,17 @@ public partial class Player : CharacterBody2D
 		if (Input.IsActionJustPressed("shoot"))
 		{
 			int n;
-			Debug.WriteLine("Porcentaje: "+porcentaje);
+			Debug.WriteLine("Porcentaje: " + porcentaje);
 			// if (r.Next(1, 100) == porcentaje)
-			n=r.Next(1,100);
-			if(n>porcentaje)
+			n = r.Next(1, 100);
+			if (n > porcentaje)
 			{
+				foreach (Node node in GetTree().GetNodesInGroup("enemies"))
+				{
+					node.QueueFree();
+				}
 				GetTree().ReloadCurrentScene(); // Reinicia la partida
+				
 			}
 			else
 			{
@@ -77,7 +82,7 @@ public partial class Player : CharacterBody2D
 				// Agregarla al árbol de nodos
 				GetTree().CurrentScene.AddChild(bullet);
 			}
-			Debug.WriteLine("Numero aleatorio: "+n);
+			Debug.WriteLine("Numero aleatorio: " + n);
 
 
 		}

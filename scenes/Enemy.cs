@@ -13,6 +13,7 @@ public partial class Enemy : CharacterBody2D
 	{
 		var hitbox = GetNode<Area2D>("Hitbox");//Error en bodyentered?
 		hitbox.BodyEntered += OnBodyEntered;
+		AddToGroup("enemies");
 	}
 	private void OnBodyEntered(Node body)
 	{
