@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfyg624ur0wed"
+path="res://.godot/imported/FREE Cardboard Hit 29 Nice Membrane 1 (Tape) A.wav-63e18257013f4f9cff0d9e2d824819fc.sample"
+
+[deps]
+
+source_file="res://assets/SFX/FREE Cardboard Hit 29 Nice Membrane 1 (Tape) A.wav"
+dest_files=["res://.godot/imported/FREE Cardboard Hit 29 Nice Membrane 1 (Tape) A.wav-63e18257013f4f9cff0d9e2d824819fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm6jgxpk4ntxb"]
+
+[ext_resource type="AudioStream" uid="uid://c40s1tb4ps1aq" path="res://assets/Music/Cease - A Himitsu (No Copyright Music).mp3" id="1_05ggv"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_05ggv")
+autoplay = true
+bus = &"Musica"

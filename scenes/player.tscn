@@ -1,28 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2ucl3ovnh84k"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ucl3ovnh84k"]
 
-[ext_resource type="Texture2D" uid="uid://dund5srqm1h0v" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://brb6pp46tacfn" path="res://Player.cs" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://b7olmddfoxiho" path="res://scenes/Bullet.tscn" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://b0cx2s1ypxufo" path="res://assets/sprites/Sprites/ship2_s.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://c6nqbbemsmtr0" path="res://assets/sprites/Sprites/ship2.png" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://bfyg624ur0wed" path="res://assets/SFX/FREE Cardboard Hit 29 Nice Membrane 1 (Tape) A.wav" id="5_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
 radius = 15.1327
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dqkch"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
-atlas = ExtResource("1_3vyb7")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("1_3vyb7")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
-atlas = ExtResource("1_3vyb7")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
-atlas = ExtResource("1_3vyb7")
+atlas = SubResource("CompressedTexture2D_dqkch")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
@@ -77,3 +79,6 @@ position = Vector2(2, 1)
 rotation = 1.5708
 scale = Vector2(0.495063, 0.543886)
 texture = ExtResource("4_dqkch")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tuyoq")

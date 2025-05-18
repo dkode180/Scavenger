@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c40s1tb4ps1aq"
+path="res://.godot/imported/Cease - A Himitsu (No Copyright Music).mp3-bca85bbb5e21c077f21d54803d4e550e.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/Cease - A Himitsu (No Copyright Music).mp3"
+dest_files=["res://.godot/imported/Cease - A Himitsu (No Copyright Music).mp3-bca85bbb5e21c077f21d54803d4e550e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

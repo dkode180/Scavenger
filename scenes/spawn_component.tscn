@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxm7c0lgdn2u"]
+[gd_scene load_steps=4 format=3 uid="uid://dxm7c0lgdn2u"]
 
 [ext_resource type="Script" uid="uid://cuagkw4rfp7db" path="res://scenes/SpawnComponent.cs" id="1_dahl1"]
 [ext_resource type="PackedScene" uid="uid://d2ows365mo48y" path="res://scenes/enemy.tscn" id="2_xdeux"]
+[ext_resource type="PackedScene" uid="uid://535pno0ixlpm" path="res://scenes/orb.tscn" id="3_f1mac"]
 
 [node name="spawnComponent" type="Node2D"]
 script = ExtResource("1_dahl1")
 EnemyScene = ExtResource("2_xdeux")
+OrbScene = ExtResource("3_f1mac")
 
 [node name="TimerSpawn" type="Timer" parent="."]
-wait_time = 3.0
 autostart = true

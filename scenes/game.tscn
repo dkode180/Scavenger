@@ -48,25 +48,41 @@ texture = ExtResource("5_iywne")
 [node name="BoundaryCircleS" type="Sprite2D" parent="."]
 modulate = Color(0.32767, 7.26052e-05, 0.327668, 1)
 z_index = 2
-scale = Vector2(0.54, 0.54)
+position = Vector2(-1.72853e-05, 1)
+scale = Vector2(0.547101, 0.54529)
 texture = ExtResource("6_p57ef")
 
 [node name="BoundaryCircleS2" type="Sprite2D" parent="."]
 modulate = Color(0.329412, 0, 0.329412, 1)
 z_index = 3
-scale = Vector2(0.7, 0.7)
+position = Vector2(-0.499973, 1.30002)
+scale = Vector2(0.703804, 0.702355)
 texture = ExtResource("6_p57ef")
 
 [node name="LabelPorcentaje" type="Label" parent="."]
-modulate = Color(0.329412, 0, 0.329412, 0.454902)
+modulate = Color(0.329412, 0, 0.329412, 0.486275)
 z_index = 2
 offset_left = -66.0
-offset_top = -25.0
+offset_top = -26.0
 offset_right = 66.0
-offset_bottom = 30.0
+offset_bottom = 29.0
 theme_override_fonts/font = ExtResource("7_u5sy4")
 theme_override_font_sizes/font_size = 54
 text = "100"
 horizontal_alignment = 1
 
 [node name="spawnComponent" parent="." instance=ExtResource("9_0tnpc")]
+
+[node name="LabelOrbes" type="Label" parent="."]
+modulate = Color(0.329412, 0, 0.329412, 0.486275)
+z_index = 2
+offset_left = -23.0
+offset_top = -303.0
+offset_right = 24.0
+offset_bottom = -252.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_lnu2h")
