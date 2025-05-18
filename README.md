@@ -59,4 +59,9 @@ Hasta ahora, he completado las siguientes tareas:
 - Creación de la clase Bullet e implementación de la misma en el juego (gestion de colliders, sprites, etc)
 - Gestión a la hora de eliminar tanto los enemigos cuando entran en contacto con una bala como la misma bala al impactar con cualquier collider
 - Creación de la lógica de disparo del juego (El tema del porcentaje de disparo certero)
-- Gestión del GAME OVER (en proceso) 
+- Gestión del GAME OVER 
+### Tercera semana de mayo
+- Implementación de los menús
+- Gestión de colores en la escena (RGB cíclico)
+- Implementación de música y SFX (SFX a revisar)
+- Refactorización y documentación de código
