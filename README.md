@@ -63,5 +63,6 @@ Hasta ahora, he completado las siguientes tareas:
 ### Tercera semana de mayo
 - Implementación de los menús
 - Gestión de colores en la escena (RGB cíclico)
-- Implementación de música y SFX (SFX a revisar)
+- Implementación de música y SFX 
 - Refactorización y documentación de código
+  
