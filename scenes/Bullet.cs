@@ -34,10 +34,14 @@ public partial class Bullet : Area2D
 	{
 		if (body is StaticBody2D || body is Enemy)
 		{
-			if(body is Enemy){
+			if (body is Enemy)
+			{
+
+				var player = GetTree().Root.FindChild("Player", true, false) as Player;
+				player?.ReproducirSonidoEnemy();
 				((Enemy)body).QueueFree();
 			}
-			GD.Print("Colisión con StaticBody2D o enemigo");
+			// GD.Print("Colisión con StaticBody2D o enemigo");
 			QueueFree();
 		}
 	}

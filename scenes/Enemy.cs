@@ -20,10 +20,10 @@ public partial class Enemy : CharacterBody2D
 	}
 	private void OnBodyEntered(Node body)
 	{
-		GD.Print("Algo entró en el hitbox: ", body.Name);
+		// GD.Print("Algo entró en el hitbox: ", body.Name);
 		if (body is Player)
 		{
-
+			
 			((Player)body).QueueFree();
 			foreach (Node node in GetTree().GetNodesInGroup("enemies"))//Solo borra los enemies
 			{
@@ -46,17 +46,11 @@ public partial class Enemy : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-
-
-
 		player = GetTree().Root.FindChild("Player", true, false) as CharacterBody2D;
 		Vector2 velocity = Velocity;
-
 		Vector2 playerPosition = player.GlobalPosition;
 		Vector2 direccion = (playerPosition - GlobalPosition).Normalized();
 		Rotation = direccion.Angle();
-
-
 		velocity += direccion * Acceleration * (float)delta;// Acelera en dirección al raton
 
 		// Limitamos la velocidad a la máxima permitida, velocity.Length pilla el modulo del vector y lo compara con MaxSpeed. Si es mayor, lo capa a MaxSpeed

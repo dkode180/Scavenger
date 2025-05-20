@@ -1,44 +1,48 @@
 using Godot;
 using System;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 
 public partial class Settings : Control
 {
-	// Called when the node enters the scene tree for the first time.
+	private HSlider volumen;
+	private CheckBox checkMute;
+	private OptionButton selectResolutions;
+	private Button backButton;
+
 	public override void _Ready()
 	{
-		var checkMute = GetNode<CheckBox>("/root/settings/MarginContainer/VBoxContainer/Mute");
-		var volumen = GetNode<HSlider>("/root/settings/MarginContainer/VBoxContainer/Volume");
-		var selectResolutions = GetNode<OptionButton>("/root/settings/MarginContainer/VBoxContainer/Resolutions");
-		var backButton = GetNode<Button>("/root/settings/MarginContainer/VBoxContainer/Button");
+		// Rutas relativas (más robustas que usar /root)
+		checkMute = GetNode<CheckBox>("MarginContainer/VBoxContainer/Mute");
+		volumen = GetNode<HSlider>("MarginContainer/VBoxContainer/Volume");
+		selectResolutions = GetNode<OptionButton>("MarginContainer/VBoxContainer/Resolutions");
+		backButton = GetNode<Button>("MarginContainer/VBoxContainer/Button");
+
+		// Conectar señales
 		volumen.ValueChanged += volumenCambiado;
 		checkMute.Toggled += muteToggled;
 		selectResolutions.ItemSelected += itemSelected;
 		backButton.Pressed += backPressed;
+
+		// Inicializar volumen desde AudioServer (decibelios a 0–100)
+		float currentDb = AudioServer.GetBusVolumeDb(0);
+		float value = Mathf.InverseLerp(-80f, 0f, currentDb) * 100f;
+		volumen.Value = value;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
-	public void backPressed()
-	{
-		Debug.WriteLine("ENTRA");
-		GetTree().ChangeSceneToFile("res://Scenes/main_menu.tscn");
-	}
 	private void volumenCambiado(double value)
 	{
-		AudioServer.SetBusVolumeDb(0, (float)value);
+		// Convertir de 0–100 (slider) a -80–0 dB (volumen real)
+		float volumeDb = Mathf.Lerp(-80f, 0f, (float)value / 100f);
+		AudioServer.SetBusVolumeDb(0, volumeDb);
 	}
+
 	private void muteToggled(bool buttonPressed)
 	{
 		AudioServer.SetBusMute(0, buttonPressed);
 	}
+
 	private void itemSelected(long index)
 	{
-		Debug.WriteLine("Entra");
 		switch (index)
 		{
 			case 0:
@@ -50,7 +54,12 @@ public partial class Settings : Control
 			case 2:
 				DisplayServer.WindowSetSize(new Vector2I(1280, 720));
 				break;
-
 		}
+	}
+
+	private void backPressed()
+	{
+	
+		GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
 	}
 }

@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2ucl3ovnh84k"]
+[gd_scene load_steps=15 format=3 uid="uid://b2ucl3ovnh84k"]
 
 [ext_resource type="Script" uid="uid://brb6pp46tacfn" path="res://Player.cs" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://b7olmddfoxiho" path="res://scenes/Bullet.tscn" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://b0cx2s1ypxufo" path="res://assets/sprites/Sprites/ship2_s.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://c6nqbbemsmtr0" path="res://assets/sprites/Sprites/ship2.png" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://bfyg624ur0wed" path="res://assets/SFX/FREE Cardboard Hit 29 Nice Membrane 1 (Tape) A.wav" id="5_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://b7ot48mxf5oap" path="res://assets/SFX/POP_Mouth_Darker_mono.wav" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://dc23d0a8qyb1g" path="res://assets/SFX/Fingerclick1.wav" id="7_fjrip"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
 radius = 15.1327
@@ -82,3 +84,10 @@ texture = ExtResource("4_dqkch")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_tuyoq")
+
+[node name="SonidoOrbe" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tuyoq")
+volume_db = -2.0
+
+[node name="SonidoEnemy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fjrip")

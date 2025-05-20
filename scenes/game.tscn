@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfom7sne0mhda"]
+[gd_scene load_steps=13 format=3 uid="uid://dfom7sne0mhda"]
 
 [ext_resource type="PackedScene" uid="uid://b2ucl3ovnh84k" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://mdmg2l36ims7" path="res://scenes/Game.cs" id="1_vtaks"]
 [ext_resource type="Texture2D" uid="uid://b02lkrw55icmr" path="res://assets/sprites/Sprites/boundary_circle.png" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://xardvwrucsnx" path="res://assets/sprites/Sprites/offscreen.png" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://djvgcj0muxj0i" path="res://addons/donut_collision_polygon2D/donut_collision_polygon2D.gd" id="4_lbhrr"]
@@ -8,8 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://b3fee5vpk1ynr" path="res://assets/sprites/Sprites/boundary_circle_s.png" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://noh3q8b30h62" path="res://assets/fonts/Fonts/gomarice_heysei_synthesizer.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dxm7c0lgdn2u" path="res://scenes/spawn_component.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dejb6bplb72kw" path="res://scenes/pausa.tscn" id="9_vtaks"]
+[ext_resource type="AudioStream" uid="uid://c860y0634wm8j" path="res://assets/SFX/PUZZLE_Success_Bell_Voice_Three_Note_Climb_Wet_stereo.wav" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://8vrtx06v2wtl" path="res://scenes/win_layer.tscn" id="12_dinhu"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_vtaks")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 
@@ -41,7 +46,6 @@ metadata/_custom_type_script = "uid://djvgcj0muxj0i"
 
 [node name="WhiteBg" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-0.499969, 4)
 scale = Vector2(0.996537, 1)
 texture = ExtResource("5_iywne")
 
@@ -85,4 +89,12 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(28, 2)
 texture = ExtResource("3_lnu2h")
+
+[node name="Pausa" parent="." instance=ExtResource("9_vtaks")]
+
+[node name="SonidoWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_kvpfn")
+
+[node name="WinLayer" parent="." instance=ExtResource("12_dinhu")]

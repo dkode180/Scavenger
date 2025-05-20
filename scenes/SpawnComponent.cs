@@ -107,8 +107,8 @@ public partial class SpawnComponent : Node2D
 	{
 		// UpdateSpriteColors();
 		con++;
-		Debug.WriteLine("Tiempo " + time);
-		Debug.WriteLine("Con: " + con);
+		// Debug.WriteLine("Tiempo " + time);
+		// Debug.WriteLine("Con: " + con);
 		if (EnemyScene != null)
 		{
 			// Instancia un nuevo enemigo desde la escena exportada
@@ -123,13 +123,13 @@ public partial class SpawnComponent : Node2D
 		}
 		else
 		{
-			GD.PrintErr("EnemyScene no está asignado.");
+			// GD.PrintErr("EnemyScene no está asignado.");
 		}
 		if (OrbScene != null)
 		{
 			if (Orb.flag == true)
 			{
-				Debug.WriteLine("Entra en la comparacion de timer");
+				// Debug.WriteLine("Entra en la comparacion de timer");
 
 
 				Node2D newOrb = (Node2D)OrbScene.Instantiate();
@@ -142,7 +142,7 @@ public partial class SpawnComponent : Node2D
 		}
 		else
 		{
-			Debug.WriteLine("No esta asignado");
+			// Debug.WriteLine("No esta asignado");
 		}
 	}
 

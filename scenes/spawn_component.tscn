@@ -10,4 +10,5 @@ EnemyScene = ExtResource("2_xdeux")
 OrbScene = ExtResource("3_f1mac")
 
 [node name="TimerSpawn" type="Timer" parent="."]
+wait_time = 0.75
 autostart = true

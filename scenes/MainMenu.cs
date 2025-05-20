@@ -33,12 +33,12 @@ public partial class MainMenu : Control
 	{
 
 		Debug.WriteLine("Jugar presionado");
-		GetTree().ChangeSceneToFile("res://Scenes/game.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/game.tscn");
 	}
 	private void OnOpcionesPressed()
 	{
 		Debug.WriteLine("Jugar presionado");
-		GetTree().ChangeSceneToFile("res://Scenes/settings.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/settings.tscn");
 
 	}
 	private void OnSalirPressed()
